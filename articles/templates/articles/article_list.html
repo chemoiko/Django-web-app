@@ -9,11 +9,16 @@
 </head>
 <body>
     <h1>article_list</h1>
-	<p>come see your article list</p>
-	<h2>superhero news</h2>
-		<p>Barry Allen is the flash</p>
-		<p>Clark Kent is superman</p>
-		<p>Bruce Wayne is the Batman</p>
-		
+	<div class="articles">
+		<!--template tags-->
+		{% comment %} there are 2 types: {%%}-this one is for python code {{}}-this one is for data {% endcomment %}
+		{%for article in articles%} 	<!--this arranges them from latest to oldest-->
+			<div class="article">
+				<h2><a href="#">{{article.title}}</a></h2>
+				<p>{{aritcle.body}}</p>
+				<p>{{aritcle.date}}</p>
+			</div>
+		{% endfor %}
+
 </body>
 </html>
